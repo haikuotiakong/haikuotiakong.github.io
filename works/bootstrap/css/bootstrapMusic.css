@@ -1,0 +1,229 @@
+#nav {
+  background-color: #08192d;
+  margin-bottom: 0;
+  border: none;
+}
+@media (min-width: 992px) {
+  #nav .container {
+    width: 768px;
+  }
+}
+@media (min-width: 1200px) {
+  #nav .container {
+    width: 768px;
+  }
+}
+#nav a {
+  color: white;
+}
+#nav .red-a {
+  color: #a61137;
+}
+#nav button {
+  color: white;
+  background-color: #1c294a;
+  border: none;
+}
+#nav .navbar-collapse {
+  border: none;
+}
+.hs-item {
+  background-color: #0a183d;
+  margin-top: -1px;
+  color: white;
+  min-height: 400px;
+  position: relative;
+}
+.hs-item h2 {
+  font-weight: bold;
+  margin-top: 100px;
+}
+.hs-item h2 span {
+  color: #fc0254;
+}
+.hs-item p {
+  line-height: 1.5;
+}
+.hs-item button {
+  color: white;
+  padding: 10px 20px;
+  background-color: #fc0254;
+  border-radius: 30px;
+  border: none;
+}
+.hs-item .btn2 {
+  background-color: #383b70;
+}
+.hs-item img {
+  width: 100%;
+}
+.intro-section {
+  padding: 80px 0;
+}
+.intro-section h2 {
+  font-weight: bold;
+  margin: 0 0 100px 0;
+  font-size: 60px;
+}
+.intro-section p {
+  line-height: 1.5;
+  color: #6a7080;
+}
+.intro-section button {
+  background-color: #FC0254;
+  padding: 20px 40px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+.how-section {
+  min-height: 500px;
+  background-image: url(../images/how-to-bg.jpg);
+  background-size: cover;
+  color: white;
+}
+.how-section h1 {
+  font-weight: bold;
+  font-size: 60px;
+  margin: 80px 0;
+}
+.how-section .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FC0254;
+  position: relative;
+}
+.how-section .image img {
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+}
+.how-section p {
+  line-height: 1.5;
+  color: #fff;
+  opacity: 0.6;
+}
+.concept-section {
+  margin: 100px 0;
+}
+.concept-section h4 {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+}
+.concept-section p {
+  line-height: 2;
+}
+.concept-section .img-text {
+  margin-top: 100px;
+  text-align: center;
+}
+.concept-section .img-text img {
+  border-radius: 30px;
+  width: 100%;
+}
+.concept-section .img-text h5 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.subscription-section {
+  background-color: #0a183d;
+  color: white;
+}
+.subscription-section .subscription-box {
+  padding: 100px 0;
+}
+.subscription-section .subscription-box h2 {
+  font-size: 50px;
+}
+.subscription-section .subscription-box h4 {
+  font-size: 30px;
+  color: #fc0254;
+}
+.subscription-section .subscription-box p {
+  color: #fff;
+  line-height: 1.8;
+  opacity: 0.6;
+}
+.subscription-section .subscription-box button {
+  padding: 20px 50px;
+  background-color: #FC0254;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin: 40px 0;
+}
+.subscription-section .subscription-list ul {
+  list-style: none;
+  background-color: #1c294a;
+  color: #ffffff;
+  height: 432px;
+  padding: 70px 15px 50px 155px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 20px;
+  border-radius: 40px;
+}
+.subscription-section .subscription-list ul img {
+  margin-right: 30px;
+}
+.premium-section .first-row h2 {
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.premium-section .first-row p {
+  line-height: 1.5;
+  margin: 50px 0;
+  color: #6a7080;
+  font-weight: bold;
+  font-size: 16px;
+}
+.premium-section .two-row div {
+  text-align: center;
+}
+.premium-section .two-row img {
+  border-radius: 50%;
+}
+.premium-section .two-row h4 {
+  font-weight: bold;
+  font-size: 30px;
+}
+.premium-section .two-row p {
+  font-size: 16px;
+}
+.footer-section {
+  background-color: #0a183d;
+  min-height: 366px;
+  color: white;
+  padding: 100px 0 85px;
+}
+.footer-section ul {
+  padding: 0;
+  list-style: none;
+}
+.footer-section ul li {
+  margin: 20px 0;
+}
+.footer-section ul li a {
+  color: #505565;
+}
+.footer-section img {
+  margin-top: 30px;
+}
+.footer-section p {
+  margin-top: 20px;
+  color: #505565;
+  text-transform: uppercase;
+}
+.footer-section .tubiao {
+  margin-top: 30px;
+  font-size: 20px;
+}
+.footer-section .tubiao span {
+  margin-right: 30px;
+  color: #505565;
+}

@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-image: url(./音乐播放器资料/xing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    perspective: 800px;
+}
+
+.cardBox{
+    transition: transform .3s;
+    width: 320px;
+    height: 520px;
+    margin: 100px auto;
+}
+
+.card {
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .3s;
+
+    .container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        text-align: center;
+        backface-visibility: hidden;
+
+        .music-img {
+            width: 320px;
+            height: 320px;
+            background-size: cover;
+            position: relative;
+
+            div {
+                position: absolute;
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+            .active {
+                opacity: 1;
+            }
+        }
+
+        .progress {
+            width: 100%;
+            height: 5px;
+            cursor: pointer;
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                margin: 0 5px;
+                color: #0B0B0B;
+                font-size: 14px;
+                opacity: 0.5;
+            }
+        }
+
+        .btn {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-around;
+
+            button {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+
+                span {
+                    font-size: 40px;
+                    opacity: 0.5;
+                }
+                span:hover{
+                    opacity: 1;
+                    color: #eb2045; 
+                }
+            }
+        }
+
+        h2 {
+            color: #0B0B0B;
+            opacity: 0.6;
+        }
+
+        p {
+            opacity: 0.6;
+        }
+
+        .foot-icon {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+
+            span {
+                font-size: 30px;
+                color: #0B0B0B;
+                cursor: pointer;
+                opacity: 0.5;
+            }
+            span:hover{
+                opacity: 1 !important;
+                color: #eb2045 !important; 
+            }
+            .icon-xiai{
+                font-weight: bold;
+            }
+        }
+    }
+
+    .back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        background-color: white;
+        box-shadow: 0 0 15px rgba(123, 22, 40, 0.2);
+
+        .nav {
+            background-color: #e6e6e6;
+            box-sizing: border-box;
+            width: 320px;
+            height: 43px;
+            padding: 12px;
+            user-select: none;
+
+            a {
+                font-size: 20px;
+                background-color: #d0d0d0;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            a:hover {
+                color: white; 
+                background-color: #eb2045;
+            }
+        }
+
+        ul {
+            list-style: none;
+            li {
+                height: 56px;
+                box-sizing: border-box;
+                padding: 12px;
+                cursor: pointer;
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+                div {
+                    display: inline-block;
+                    margin-left: 4px;
+                    h4 {
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                    p {
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                }
+                hr{
+                    margin-top: 6px;
+                    opacity: .5;
+                }
+            }
+            li:hover{
+                color: white; 
+                background-color: #eb2045;
+            }
+        }
+    }
+}

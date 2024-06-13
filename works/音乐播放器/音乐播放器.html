@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="./音乐播放器资料/音乐播放图标/iconfont.css">
+    <link rel="stylesheet" href="./music.css">
+</head>
+
+<body>
+    <div class="cardBox">
+        <div class="card">
+            <div class="container">
+                <div class="music-img"></div>
+                <div class="music"></div>
+                <audio class="song" src="./音乐播放器资料/陈奕迅 - 你的背包.mp3" type="audio/mpeg"></audio>
+                <input class="progress" type="range" min="0" value="0" step="0.01" max="100">
+                <div class="time">
+                    <span class="newTime">0:00</span>
+                    <span class="endTime">4:40</span>
+                </div>
+                <div class="btn">
+                    <button class="prev"><span class="iconfont icon-shangyishou"></span></button>
+                    <button class="play-pause"><span class=" iconfont icon-bofang"></span></button>
+                    <button class="next"><span class="iconfont icon-xiayishou"></span></button>
+                </div>
+                <h2 class="singer">陈奕迅</h2>
+                <p class="songName">你的背包</p>
+                <div class="foot-icon">
+                    <span class="iconfont icon-xiai"></span>
+                    <span class="iconfont icon-suijibofang"></span>
+                    <span class="iconfont icon-danqubofang
+                    "></span>
+                    <span class="iconfont icon-caidan menu"></span>
+                </div>
+            </div>
+            <div class="back">
+                <div class="nav">
+                    <a class="goBack iconfont icon-zuojiantou"></a>
+                    <span>Up Next</span>
+                </div>
+                <ul>
+                    <li>
+                        <img src="./音乐播放器资料/你的背包.jpg" alt="">
+                        <div>
+                            <h4>你的背包</h4>
+                            <p>陈奕迅</p>
+                        </div>
+                        <hr>
+                    </li>
+                    <li>
+                        <img src="./音乐播放器资料/十年.jpg" alt="">
+                        <div>
+                            <h4>十年</h4>
+                            <p>陈奕迅</p>
+                        </div>
+                        <hr>
+                    </li>
+                    <li>
+                        <img src="./音乐播放器资料/兄妹.jpg" alt="">
+                        <div>
+                            <h4>兄妹</h4>
+                            <p>陈奕迅</p>
+                        </div>
+                        <hr>
+                    </li>
+                    <li>
+                        <img src="./音乐播放器资料/兄弟.jpg" alt="">
+                        <div>
+                            <h4>兄弟</h4>
+                            <p>陈奕迅、刘德华</p>
+                        </div>
+                        <hr>
+                    </li>
+                    <li>
+                        <img src="./音乐播放器资料/冰雨.jpg" alt="">
+                        <div>
+                            <h4>冰雨</h4>
+                            <p>刘德华</p>
+                        </div>
+                        <hr>
+                    </li>
+                    <li>
+                        <img src="./音乐播放器资料/无赖.jpg" alt="">
+                        <div>
+                            <h4>无赖</h4>
+                            <p>郑中基</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 定义一个数组存放歌曲相关信息
+        var musicMessage = [
+            {
+                id: 0,
+                singer: "陈奕迅",
+                songName: "你的背包",
+                singerimg: "./音乐播放器资料/陈1.webp",
+                song: "./音乐播放器资料/陈奕迅 - 你的背包.mp3"
+            },
+            {
+                id: 1,
+                singer: "陈奕迅",
+                songName: "十年",
+                singerimg: "./音乐播放器资料/陈2.jpg",
+                song: "./音乐播放器资料/陈奕迅 - 十年.mp3"
+            },
+            {
+                id: 2,
+                singer: "陈奕迅",
+                songName: "兄妹",
+                singerimg: "./音乐播放器资料/陈3.jpg",
+                song: "./音乐播放器资料/陈奕迅 - 兄妹.mp3"
+            },
+            {
+                id: 3,
+                singer: "陈奕迅、刘德华",
+                songName: "兄弟",
+                singerimg: "./音乐播放器资料/陈刘.png",
+                song: "./音乐播放器资料/陈奕迅、刘德华 - 兄弟.mp3"
+            },
+            {
+                id: 4,
+                singer: "刘德华",
+                songName: "冰雨",
+                singerimg: "./音乐播放器资料/刘.jpeg",
+                song: "./音乐播放器资料/刘德华 - 冰雨.mp3"
+            },
+            {
+                id: 5,
+                singer: "郑中基",
+                songName: "无赖",
+                singerimg: "./音乐播放器资料/郑.webp",
+                song: "./音乐播放器资料/郑中基 - 无赖.mp3"
+            }
+        ]
+        var imgBox = document.querySelector(".music-img");
+        // 歌手图片
+        for (arr of musicMessage) {
+            var newDiv = document.createElement("div");
+            newDiv.style.width = "320px";
+            newDiv.style.height = "320px";
+            newDiv.style.backgroundSize = "cover";
+            newDiv.style.backgroundImage = 'url(' + arr.singerimg + ')';
+            imgBox.appendChild(newDiv);
+        }
+        var allImg = document.querySelectorAll(".music-img div");
+        allImg[0].classList.add("active");
+        var audioDom = document.querySelector("audio");
+        var playPause = document.querySelector(".play-pause");
+        var progress = document.querySelector(".progress");
+        var newTime = document.querySelector(".newTime");
+        var endTime = document.querySelector(".endTime");
+        var playIcon = document.querySelector(".icon-bofang")
+        // 隐藏初始的音频进度条
+        audioDom.style.display = "none";
+
+        // 歌曲时长变化事件
+        audioDom.ondurationchange = function () {
+            // 设置进度条最大值
+            progress.max = audioDom.duration;
+        };
+
+        audioDom.oncanplay = function () {
+            // 设置歌曲总时长
+            endTime.innerText = parseInt(progress.max / 60) + ":" + parseInt(progress.max % 60).toString().padStart(2, '0');
+        }
+
+        // 当视频的当前播放时间更新时，将会触发该事件。
+        audioDom.ontimeupdate = function () {
+            // currentTime:获取或设置当前视频的播放时间
+            progress.value = this.currentTime;
+            // 歌曲播放时间，秒数不足两位补零
+            newTime.innerText = parseInt(this.currentTime / 60) + ":" + parseInt(this.currentTime % 60).toString().padStart(2, '0');
+        };
+
+        // 进度条移动歌曲时间跟着变化
+        progress.oninput = function () {
+            audioDom.currentTime = this.value;
+        };
+        // 暂停按钮
+        playPause.onclick = function () {
+            if (audioDom.paused) {
+                audioDom.play();
+                playIcon.classList.remove("icon-bofang")
+                playIcon.classList.add("icon-zanting")
+            } else {
+                audioDom.pause();
+                playIcon.classList.remove("icon-zanting")
+                playIcon.classList.add("icon-bofang")
+            }
+        }
+
+        // 切换歌曲
+        // 定义一个变量记录当前歌曲id
+        var count = 0;
+        var prev = document.querySelector(".prev");
+        var next = document.querySelector(".next");
+        var musicImg = document.querySelector(".music-img");
+        var singer = document.querySelector(".singer");
+        var songName = document.querySelector(".songName");
+        var song = document.querySelector(".song");
+        // 改变歌曲
+        function changeSong(index) {
+            var oldActive = document.querySelector(".active");
+            oldActive.classList.remove("active");
+            allImg[index].classList.add("active");
+            singer.innerText = musicMessage[index].singer;
+            songName.innerText = musicMessage[index].songName;
+            // song.setAttribute('src', musicMessage[count].song);
+            song.src = musicMessage[index].song;
+            audioDom.play();
+            audioDom.ondurationchange();
+            playIcon.classList.remove("icon-bofang");
+            playIcon.classList.add("icon-zanting");
+        }
+        prev.onclick = function () {
+            count--;
+            count = count < 0 ? musicMessage.length - 1 : count;
+            changeSong(count);
+        }
+        next.onclick = function () {
+            count++;
+            count = count > 5 ? 0 : count;
+            changeSong(count);
+        }
+
+        // 音乐播放完毕自动下一首
+        audioDom.onended = function(){
+            next.onclick();
+        };
+
+        // 翻面事件
+        var goBack = document.querySelector(".goBack");
+        var card = document.querySelector(".card");
+        var menu = document.querySelector(".menu");
+        goBack.onclick = function () {
+            card.style.transform = "rotateY(360deg)";
+        }
+        menu.onclick = function () {
+            card.style.transform = "rotateY(180deg)";
+        }
+
+        // 按钮事件
+        var btns = document.querySelectorAll(".foot-icon span");
+        for (var i = 0; i < 3; i++) {
+            btns[i].dataset.mark = false;
+            btns[i].onclick = function () {
+                if (this.dataset.mark === "false") {
+                    this.style.color = "#eb2045";
+                    this.style.opacity = 1;
+                    this.dataset.mark = true;
+                } else {
+                    this.style.color = "#0b0b0b";
+                    this.style.opacity = 0.5;
+                    this.dataset.mark = false;
+                }
+            }
+        }
+
+        // 背面歌曲点击事件
+        var songs = document.querySelectorAll(".back li");
+        for (let i = 0; i < songs.length; i++) {
+            songs[i].dataset.index = i;
+            songs[i].onclick = function () {
+                changeSong(this.dataset.index);
+                card.style.transform = "rotateY(360deg)";
+            }
+        }
+        var cardBox = document.querySelector(".cardBox");
+        console.log(cardBox)
+        cardBox.onmouseenter = function(){
+            cardBox.style.transform = "translateZ(60px)";
+        }
+        cardBox.onmouseleave = function(){
+            cardBox.style.transform = "translateZ(0px)";
+        }
+    </script>
+</body>
+
+</html>

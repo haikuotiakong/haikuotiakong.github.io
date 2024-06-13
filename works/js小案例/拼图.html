@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .puzzle-box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 0 auto;
+            margin-top: 100px;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .puzzle-box div {
+            width: 100px;
+            height: 100px;
+            background-image: url(./images/300huahua.jpg);
+            position: absolute;
+            border: 2px solid white;
+            box-sizing: border-box;
+        }
+
+        .puzzle-box .on {
+            border-color: red;
+        }
+
+        button {
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="puzzle-box"></div>
+    <button>开始游戏</button>
+    <script>
+        // 拼图新、旧顺序
+        function Card(order) {
+            this.oldOrder = order;
+            this.newOrder = order;
+        }
+        // 获取拼图行和列
+        function calcCoord(card, mark) {
+            if (mark) {
+                var row = Math.floor(card.newOrder / size);
+                var col = card.newOrder % size;
+            } else {
+                var row = Math.floor(card.oldOrder / size);
+                var col = card.oldOrder % size;
+            }
+            return { row: row, col: col };
+        }
+
+        var clickedOne = null;
+        function site(card) {
+            card.node = document.createElement("div");
+            card.node.style.backgroundPositionX = calcCoord(card).col * -100 + "px";
+            card.node.style.backgroundPositionY = calcCoord(card).row * -100 + "px";
+            update(card);
+            puzzleBox.appendChild(card.node);
+            // 设置变量获取this
+            var _this = card;
+            card.node.onclick = function () {
+                if (clickedOne) {
+                    clickedOne.node.classList.remove("on");
+                    // 改变newOrder
+                    var tem = _this.newOrder;
+                    _this.newOrder = clickedOne.newOrder;
+                    clickedOne.newOrder = tem;
+                    // console.log(cards)
+                    // 根据newOrder改变位置
+                    update(_this, true);
+                    update(clickedOne, true);
+                    clickedOne = null;
+                    var isAllCorrent = cards.every(function (card) {
+                        return card.newOrder === card.oldOrder;
+                    })
+                    if (isAllCorrent) {
+                        alert("恭喜过关")
+                        // console.log("通过")
+                    }
+                } else {
+                    clickedOne = _this;
+                    this.classList.add("on");
+                }
+            }
+        }
+        function update(card, mark) {
+            card.node.style.top = calcCoord(card, mark).row * 100 + "px";
+            card.node.style.left = calcCoord(card, mark).col * 100 + "px";
+        }
+
+        var puzzleBox = document.querySelector(".puzzle-box");
+        var size = 3;
+        var cards = new Array(size * size);
+        cards = cards.fill(undefined).map(function (element, index) {
+            return new Card(index);
+        })
+        cards.forEach(function (card) {
+            site(card);
+        });
+        var btn = document.querySelector("button");
+        btn.onclick = function () {
+            // console.log("开始游戏")
+            // 随机打乱顺序
+            var chaosCards = cards.map(function (card) {
+                return card.newOrder;
+            }).sort(function () {
+                return Math.random() - 0.5;
+            });
+
+            // 弄乱拼图的newOrder
+            cards = cards.map(function (card, index) {
+                card.newOrder = chaosCards[index];
+                return card;
+            });
+            cards.forEach(function (card) {
+                update(card, true);
+            });
+        }
+    </script>
+</body>
+
+</html>

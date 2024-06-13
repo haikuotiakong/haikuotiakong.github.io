@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入ECharts 文件 -->
+    <link rel="stylesheet" href="./css/index.css">
+    <title>晋城高速数据可视化</title>
+</head>
+
+<body>
+    <header>
+        <img src="./images/jcdsj_logo.gif" alt="">
+    </header>
+    <main>
+        <div class="main-left">
+            <div class="main-left-top">
+                <div class="title">
+                    <span>交通流量</span>
+                    <img src="./images/ksh33.png" alt="">
+                </div>
+                <div class="bar-line"></div>
+            </div>
+            <div class="main-left-center">
+                <div class="title">
+                    <span>交通工具流量</span>
+                    <img src="./images/ksh33.png" alt="">
+                </div>
+                <div class="bar-line"></div>
+            </div>
+            <div class="main-left-bottom">
+                <div class="title">
+                    <span>收费车流量</span>
+                    <img src="./images/ksh33.png" alt="">
+                </div>
+                <div class="toll">
+                    <div class="toll-top">
+                        <p>运输方式</p>
+                        <p>客运量</p>
+                        <p>货运量</p>
+                    </div>
+                    <div class="toll-main">
+                        <div>
+                            <div><img src="./images/ksh35.png" alt="">公路运输</div>
+                            <div class="bg">4347.2万人</div>
+                            <div class="bg">8000万</div>
+                        </div>
+                        <div>
+                            <div><img src="./images/ksh35.png" alt="">公路运输</div>
+                            <div class="bg">5611.5万人</div>
+                            <div class="bg">3525万</div>
+                        </div>
+                        <div>
+                            <div><img src="./images/ksh35.png" alt="">公路运输</div>
+                            <div class="bg">5314.9万人</div>
+                            <div class="bg">9442万</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-center">
+            <div class="main-center-top">
+                <div class="box1">
+                    <h3>当前警情数(起)</h3>
+                    <div class="text">
+                        <p id="importsize">67</p>
+                        <div>
+                            <p id="twosize">日环比:+3%</p>
+                            <p id="twosize">周环比:-3%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box2">
+                    <h3>区域拥堵指数</h3>
+                    <div class="text">
+                        <p id="importsize">1.4</p>
+                        <div>
+                            <p id="twosize">缓行</p>
+                            <p id="twosize">平均车速:20KM/H</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box3">
+                    <h3>当前警情数(起)</h3>
+                    <div class="text">
+                        <p id="importsize">99</p>
+                        <div>
+                            <p id="twosize">日环比:+3%</p>
+                            <p id="twosize">周环比:-3%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box4">
+                    <h3>当前警情数(起)</h3>
+                    <div class="text">
+                        <p id="importsize">9999</p>
+                        <div>
+                            <p id="twosize">日环比:+3%</p>
+                            <p id="twosize">周环比:-3%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-center-bottom"></div>
+        </div>
+        <div class="main-right">
+            <div class="main-right-top">
+                <div class="title">
+                    <span>本月发生事件</span>
+                    <img src="./images/ksh33.png" alt="">
+                </div>
+                <div class="rader"></div>
+            </div>
+            <div class="main-right-center">
+                <div class="title">
+                    <span>收费站营收分布</span>
+                    <img src="./images/ksh33.png" alt="">
+                </div>
+                <div class="pie"></div>
+            </div>
+            <div class="main-right-bottom">
+                <div class="title">
+                    <span>出行方向</span>
+                    <img src="./images/ksh33.png" alt="">
+                </div>
+                <div class="smallMap"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.min.js"></script>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/china.js"></script>
+    <script src="./js/smallMap.js"></script>
+    <script src="./js/bigMap.js"></script>
+</body>
+
+</html>

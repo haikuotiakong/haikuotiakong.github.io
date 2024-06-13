@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* @font-face {
+    font-family: electronicFont;
+    src: url(../font/yjsz.ttf);
+} */
+body {
+  background-image: url(../images/bg.png);
+  padding: 15px;
+  background-size: cover;
+}
+#importsize {
+  font-size: 40px;
+}
+#twosize {
+  font-size: 14px;
+}
+header {
+  height: 0.4844rem;
+  text-align: center;
+}
+header img {
+  height: 0.4844rem;
+}
+main {
+  display: flex;
+}
+main .title {
+  height: 0.5469rem;
+  width: 100%;
+  position: relative;
+}
+main .title img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+main .title span {
+  color: #fff;
+  font-size: 18px;
+  line-height: 35px;
+}
+main .main-left {
+  flex: 1;
+}
+main .main-left > div {
+  width: 5.8828rem;
+  height: 3.5078rem;
+}
+main .main-left .bar-line {
+  height: 2.9688rem;
+  overflow: hidden;
+}
+main .main-left .toll {
+  font-size: 14px;
+}
+main .main-left .toll .toll-top {
+  height: 25px;
+  display: flex;
+}
+main .main-left .toll .toll-top > p {
+  flex: 1;
+  text-align: center;
+  line-height: 25px;
+  color: #fff;
+}
+main .main-left .toll .toll-main {
+  height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .main-left .toll .toll-main > div {
+  height: 0.7344rem;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #1380bd;
+  background: rgba(15, 47, 72, 0.8);
+}
+main .main-left .toll .toll-main > div > div {
+  width: 1.7813rem;
+  height: 100%;
+  color: #fff;
+  line-height: 0.7344rem;
+  text-align: center;
+  background: url(../images/ksh38.png);
+  background-size: 100% 0.7344rem;
+  background-repeat: no-repeat;
+}
+main .main-center {
+  flex: 2;
+  padding: 25px 20px 0;
+}
+main .main-center .main-center-top {
+  width: 11.1406rem;
+  height: 2.0313rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+main .main-center .main-center-top > div {
+  background-image: url(../images/ksh40.png);
+  background-size: 100% 100%;
+}
+main .main-center .main-center-top h3 {
+  padding: 16px 0 0 20px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+main .main-center .main-center-top .text > p {
+  flex: 1;
+  font-size: 46px;
+  font-family: electronicFont;
+  color: #20dbfd;
+  text-shadow: 0 0 25px #00d8ff;
+  line-height: 1.3281rem;
+}
+main .main-center .main-center-top .box1 {
+  width: 2.2344rem;
+  height: 2.0313rem;
+}
+main .main-center .main-center-top .box1 .text {
+  display: flex;
+}
+main .main-center .main-center-top .box1 .text > div {
+  flex: 2;
+  height: 1.3281rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main .main-center .main-center-top .box1 .text > div p:nth-child(1) {
+  color: #fe3e12;
+}
+main .main-center .main-center-top .box1 .text > div p:nth-child(2) {
+  color: #12fe81;
+}
+main .main-center .main-center-top .box2 {
+  width: 3.25rem;
+  height: 2.0313rem;
+}
+main .main-center .main-center-top .box2 .text {
+  display: flex;
+}
+main .main-center .main-center-top .box2 .text > div {
+  flex: 2;
+  height: 1.3281rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main .main-center .main-center-top .box2 .text > div p {
+  color: #fff;
+}
+main .main-center .main-center-top .box3 {
+  width: 2.1406rem;
+  height: 2.0313rem;
+}
+main .main-center .main-center-top .box3 .text,
+main .main-center .main-center-top .box4 .text {
+  display: flex;
+}
+main .main-center .main-center-top .box3 .text > div,
+main .main-center .main-center-top .box4 .text > div {
+  flex: 2;
+  height: 1.3281rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 6px;
+}
+main .main-center .main-center-top .box3 .text > div p:nth-child(1),
+main .main-center .main-center-top .box4 .text > div p:nth-child(1) {
+  color: #fe3e12;
+}
+main .main-center .main-center-top .box3 .text > div p:nth-child(2),
+main .main-center .main-center-top .box4 .text > div p:nth-child(2) {
+  color: #12fe81;
+}
+main .main-center .main-center-top .box4 {
+  width: 208px;
+  height: 2.0313rem;
+}
+main .main-center .main-center-bottom {
+  width: 11.1406rem;
+  height: 8.0188rem;
+  overflow: hidden;
+}
+main .main-right {
+  flex: 1;
+}
+main .main-right > div {
+  width: 5.8828rem;
+  height: 3.5078rem;
+}
+main .main-right > div .rader {
+  height: 2.9688rem;
+  overflow: hidden;
+}
+main .main-right > div .pie {
+  height: 2.9688rem;
+  overflow: hidden;
+}
+main .main-right > div .smallMap {
+  height: 2.9688rem;
+  overflow: hidden;
+}

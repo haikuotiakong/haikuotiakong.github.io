@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动验证码</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        .stage {
+            width: 400px;
+            margin: 100px auto;
+        }
+
+        .stage .thumb {
+            position: relative;
+        }
+
+        .stage .thumb img {
+            width: 100%;
+            display: block;
+        }
+
+        .stage .thumb s,
+        .stage .thumb ins {
+            width: 40px;
+            height: 40px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            z-index: 8;
+        }
+
+        .stage .thumb ins {
+            z-index: 9;
+            background-image: url("./images/花花.jpg");
+            background-size: 400px auto;
+            box-shadow: 0 0 3px skyblue;
+        }
+
+        .progress {
+            width: 400px;
+            height: 40px;
+            background-color: lightblue;
+            position: relative;
+        }
+
+        .progress i {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: lightcoral;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.js"></script>
+</head>
+
+<body>
+    <section class="stage">
+        <div class="thumb">
+            <img src="./images/花花.jpg" alt="">
+            <s></s>
+            <ins></ins>
+        </div>
+
+        <div class="progress">
+            <i></i>
+        </div>
+    </section>
+
+    <script>
+        var w = $(".stage img").width();
+        var h = $(".stage img").height();
+
+        var x = Math.floor(Math.random() * (w / 2 - 39) + w / 2);
+        var y = Math.floor(Math.random() * (h - 39));
+        // console.log("y",y)
+        if(y<0){
+            y=0
+        }
+        $(".thumb")
+            .find("s")
+            .css({
+                top: y + "px",
+                left: x + "px"
+            })
+            .end()
+            .find("ins")
+            .css({
+                top: y + "px",
+                left: w - x - 40 + "px",
+                backgroundPositionX: -x + "px",
+                backgroundPositionY: -y + "px",
+            })
+            .end()
+            .next()
+            .find("i")
+            .css({
+                left: w - x - 40 + "px"
+            });
+
+        $(".progress i").mousedown(function (e) {
+            var initX = e.offsetX
+            $("html").on("mousemove", function (e) {
+                X = e.clientX - initX - $(".stage").offset().left
+                X = X < 0 ? 0 : X
+                X = X > w - 40 ? w - 40 : X
+                $(".progress i").css({
+                    left: X + "px"
+                });
+                $(".thumb ins").css({
+                    left: X + "px"
+                })
+            });
+        });
+
+        $("html").mouseup(function (e) {
+            $("html").off("mousemove")
+            if (Math.abs(parseInt($(".thumb ins").css("left")) - x) > 3) {
+                $(".thumb ins")
+                    .add(".progress i").css({left: w - x - 40 + "px"})
+            } else {
+                alert("验证成功")
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  background-image: url(音乐播放器资料/xing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  perspective: 800px;
+}
+.cardBox {
+  transition: transform 0.3s;
+  width: 320px;
+  height: 520px;
+  margin: 100px auto;
+}
+.card {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+}
+.card .container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  backface-visibility: hidden;
+}
+.card .container .music-img {
+  width: 320px;
+  height: 320px;
+  background-size: cover;
+  position: relative;
+}
+.card .container .music-img div {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.card .container .music-img .active {
+  opacity: 1;
+}
+.card .container .progress {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+}
+.card .container .time {
+  display: flex;
+  justify-content: space-between;
+}
+.card .container .time span {
+  margin: 0 5px;
+  color: #0B0B0B;
+  font-size: 14px;
+  opacity: 0.5;
+}
+.card .container .btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.card .container .btn button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.card .container .btn button span {
+  font-size: 40px;
+  opacity: 0.5;
+}
+.card .container .btn button span:hover {
+  opacity: 1;
+  color: #eb2045;
+}
+.card .container h2 {
+  color: #0B0B0B;
+  opacity: 0.6;
+}
+.card .container p {
+  opacity: 0.6;
+}
+.card .container .foot-icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.card .container .foot-icon span {
+  font-size: 30px;
+  color: #0B0B0B;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.card .container .foot-icon span:hover {
+  opacity: 1 !important;
+  color: #eb2045 !important;
+}
+.card .container .foot-icon .icon-xiai {
+  font-weight: bold;
+}
+.card .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(123, 22, 40, 0.2);
+}
+.card .back .nav {
+  background-color: #e6e6e6;
+  box-sizing: border-box;
+  width: 320px;
+  height: 43px;
+  padding: 12px;
+  user-select: none;
+}
+.card .back .nav a {
+  font-size: 20px;
+  background-color: #d0d0d0;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.card .back .nav a:hover {
+  color: white;
+  background-color: #eb2045;
+}
+.card .back ul {
+  list-style: none;
+}
+.card .back ul li {
+  height: 56px;
+  box-sizing: border-box;
+  padding: 12px;
+  cursor: pointer;
+}
+.card .back ul li img {
+  width: 32px;
+  height: 32px;
+}
+.card .back ul li div {
+  display: inline-block;
+  margin-left: 4px;
+}
+.card .back ul li div h4 {
+  font-size: 16px;
+  font-weight: 300;
+}
+.card .back ul li div p {
+  font-size: 12px;
+  font-weight: 500;
+}
+.card .back ul li hr {
+  margin-top: 6px;
+  opacity: 0.5;
+}
+.card .back ul li:hover {
+  color: white;
+  background-color: #eb2045;
+}
